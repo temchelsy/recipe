@@ -1,0 +1,35 @@
+body {
+  background-image: url(/assert/image/national-fast-food-day.avif);
+}
+
+.container {
+  background-color: rgb(236, 177, 67);
+  padding-bottom: 20px;
+  min-height: 100vh;
+}
+
+.headName {
+  color: rgb(34, 34, 97);
+  text-align: center;
+  padding-top: 20px;
+}
+
+#msg {
+  text-align: center;
+  color: red;
+  display: none;
+  margin-bottom: 20px;
+}
+#items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.singleItem {
+  cursor: pointer;
+}
+#details {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
