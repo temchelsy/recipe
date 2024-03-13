@@ -27,7 +27,6 @@ document.getElementById("button").addEventListener('click',()=>{
                     items.appendChild(itemDiv)
                 })
             }
-
         })
 })
 
@@ -61,4 +60,33 @@ function details(id){
         detailsDiv.innerHTML = detailsInfo
         details.appendChild(detailsDiv)
     })
+}
+
+// function displayRecipe(recipe) {
+//     const name = recipe.strMeal
+//     const imgSrc = recipe.strMealThumb
+//     const instructions = recipe.strInstructions
+//     const container = document.getElementById('button')
+//     const recipeElement = document.createElement('div')
+//     recipeElement.classList.add('box')
+//     recipeElement.innerHTML = `
+//     <h2 class = "name">${name}</h2>
+//     <img src="${imgSrc}" alt="${name}" class="img"
+//     <p class= "instructions">${instructions}</P>
+//     `
+//     container.appendChild(recipeElement)
+//     const img = recipeElement.querySelector('.img')
+//     const popup = recipeElement.querySelector('.instructions')
+
+//     img.addEventListener('mouse')
+// }
+
+function getMealRecipe(e){
+    e.preventDefault();
+    if(e.target.classList.contains('meal-search-box')){
+        let mealItem = e.target.parentElement.parentElement;
+        fetch(`https:www.themealdb.com/api/json/v1/1/search.php?s=${mealItem.dataset.id}`)
+        .then(response => response.json())
+        .then(data => mealRecipeModal(data.meals));
+    }
 }
